@@ -1,0 +1,8 @@
+{
+    "rocketsalad": 
+      {
+        "url": "https://www.rocketsalad.co.kr/html/mainm.html",
+        "selector": "body > center > div:nth-child(8) > table > tbody > tr > td > table > tbody",
+        "lastItem": null
+      }
+  }
