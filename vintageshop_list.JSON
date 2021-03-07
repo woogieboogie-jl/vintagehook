@@ -2,7 +2,29 @@
     "rocketsalad": 
       {
         "url": "https://www.rocketsalad.co.kr/html/mainm.html",
+        "type": "unknown",
         "selector": "table[id = makebanner]",
+        "lastItem": null
+      },
+    "fabrique": 
+      {
+        "url": "https://fabrique.co.kr",
+        "type": "imweb",
+        "selector": "div.shop-item",
+        "lastItem": null
+      },
+    "xecond": 
+      {
+        "url": "http://xecond.co.kr/",
+        "type": "cafe24",
+        "selector": "li.xans-record-",
+        "lastItem": null
+      },
+    "batons":
+      {
+        "url": "http://batons.co.kr/product/list.html?cate_no=24",
+        "type": "cafe24",
+        "selector": "li.xans-record-",
         "lastItem": null
       }
   }

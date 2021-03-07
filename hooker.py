@@ -25,8 +25,8 @@ def shopInput(shops_data):
             print("unexpected error!...")
     return url, selector
 
-def initiate(url):
-    r = requests.get(url)
+def initiate(url,headers):
+    r = requests.get(url, headers=headers)
     if r.status_code == 200:
         r_text = r.text
     else: 
@@ -47,7 +47,7 @@ def main():
     url, selector = shopInput(shops_data)
     print(url)
     print(selector)
-    r_text = initiate(url)
+    r_text = initiate(url,headers)
     soup = SoupGet(r_text)
     target = SoupCrawl(soup,selector)
     breakpoint()
