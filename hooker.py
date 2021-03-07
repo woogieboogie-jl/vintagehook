@@ -6,7 +6,7 @@ shop_json = open("vintageshop_list.json")
 shops_data = json.load(shop_json)
 headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
 
-print(url_dict)
+print(shops_data)
 
 
 def shopInput(shops_data):
@@ -15,15 +15,15 @@ def shopInput(shops_data):
     while True:
         shop = input("choose your wanted vintage site for crawling...")
         if shop in shops_data.keys():
-            shop_data = shops_data[shop]\
+            shop_data = shops_data[shop]
             url = shop_data["url"]
             selector = shop_data["selector"]
-            break()
+            break
         elif shop not in shops_data.keys():
             print("not in vintage shops list")
         else:
             print("unexpected error!...")
-    return url selector
+    return url, selector
 
 def initiate(url):
     r = requests.get(url)
@@ -36,15 +36,24 @@ def initiate(url):
 
 def SoupGet(r_text):
     soup = bs(r_text,'html.parser')
-    soup_str = soup.prettify()
-    return soup_str
+    return soup
 
-def SoupCrawl(soup_str, selector)
-    soup_str
-
+def SoupCrawl(soup, selector):
+    target = soup.select(selector)
+    return target
 
 
 def main():
     url, selector = shopInput(shops_data)
+    print(url)
+    print(selector)
     r_text = initiate(url)
-    soup_str = SoupGet(r_text)
+    soup = SoupGet(r_text)
+    target = SoupCrawl(soup,selector)
+    breakpoint()
+    print(target)
+    return target
+
+
+html = main()
+print(html)
